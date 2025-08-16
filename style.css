@@ -1,0 +1,359 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: 'Roboto', sans-serif;
+}
+
+.toast-box {
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  width: auto;
+  transform: translate(-50%, -50%);
+  padding: 1vw 2vw;
+  font-size: 1.2vw;
+  color: rgb(0, 0, 0);
+  background-color: #f7f7f7;
+  border-radius: 2.5vw;
+  box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw; /* space between image and text */
+  padding-left: 3vw;
+
+}
+
+.toast-icon {
+  position: absolute;
+  left: 0.8vw;
+  height: 1.5vw; /* adjust size */
+  width: auto;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+#alert-container {
+  position: fixed;
+  bottom: 20%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+#alert-container.layout-right {
+  right: 1px;
+}
+
+#alert-container.layout-left {
+  left: 1px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 4.5vw;
+  aspect-ratio: 1/1;
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.avatar-wrapper.avatar-in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+#alert-container.layout-right .avatar-wrapper {
+  right: 0;
+}
+
+#alert-container.layout-left .avatar-wrapper {
+  left: 0;
+}
+
+/* === Avatar Core === */
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0.2vw 0.3vw 1vw rgba(0, 0, 0, 0.7);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes avatar-in {
+  from {
+    transform: translateY(30px) scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.avatar-in {
+  animation: avatar-in 0.2s ease-out forwards;
+}
+
+@keyframes slide-out-right {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+.slide-out-right {
+  animation: slide-out-right 0.2s ease-in-out forwards;
+}
+
+@keyframes slide-out-left {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+}
+
+.slide-out-left {
+  animation: slide-out-left 0.2s ease-in-out forwards;
+}
+
+/* === Platform Badge (Position based on layout) === */
+.platform-badge {
+  width: 1.2vw;
+  aspect-ratio: 1/1;
+  position: absolute;
+  bottom: 0;
+  background-color: #fffbff;
+  padding: 0.2vw;
+  border-radius: 50%;
+  box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#alert-container.layout-right .platform-badge {
+  left: 0;
+  transform: translate(0, 15%) scale(0.9);
+}
+
+#alert-container.layout-left .platform-badge {
+  right: 0;
+  transform: translate(0, 15%) scale(0.9);
+}
+
+.platform-logo {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+}
+
+/* === Platform Bubble (Position based on layout) === */
+.platform-bubble {
+  position: absolute;
+  width: 1vw; /* tiny start */
+  height: 1vw;
+  border-radius: 50%;
+  top: 0;
+  left: 2px; /* or right depending on layout */
+  z-index: 2;
+  opacity: 0;
+  transform: scale(0);
+}
+
+#alert-container.layout-right .platform-bubble {
+  left: 2px;
+}
+
+
+#alert-container.layout-left .platform-bubble {
+  right: 2px; /* anchor to avatar's right side */
+  left: auto; /* override default */
+}
+
+.platform-bubble-twitch {
+  background-color: #d8b4fe;
+}
+
+.platform-bubble-youtube {
+  background-color: #fecaca;
+}
+
+.platform-bubble-kick {
+  background-color: #bbf7d0;
+}
+
+.platform-bubble-tiktok {
+  background-color: #c2c4ca;
+}
+
+@keyframes platform-bubble-pop-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.platform-bubble.bubble-pop-in {
+  animation: platform-bubble-pop-in 0.15s ease-out forwards;
+}
+
+@keyframes platform-bubble-pop-out-left {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) translate(-150%, 80%);
+    opacity: 0;
+  }
+}
+
+.platform-bubble-pop-out-left {
+  animation: platform-bubble-pop-out-left 0.25s ease-in forwards;
+}
+
+@keyframes platform-bubble-pop-out-right {
+  0% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2) translate(150%, 80%);
+    opacity: 0;
+  }
+}
+
+.platform-bubble-pop-out-right {
+  animation: platform-bubble-pop-out-right 0.25s ease-in forwards;
+}
+
+@keyframes platform-bubble-pop-in-right {
+  0% {
+    transform: scale(2) translate(-150%, 80%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.platform-bubble-pop-in-right {
+  animation: platform-bubble-pop-in-right 0.25s ease-out forwards;
+}
+
+@keyframes platform-bubble-pop-in-left {
+  0% {
+    transform: scale(2) translate(150%, 80%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 1;
+  }
+}
+
+.platform-bubble-pop-in-left {
+  animation: platform-bubble-pop-in-left 0.25s ease-out forwards;
+}
+
+/* === Speech Bubble === */
+.speech-bubble {
+  max-width: 30vw;
+  min-width: 7.5vw;
+  height: 4.5vw;
+  border-radius: 2.5vw;
+  background-color: #f7f7f7;
+  box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  padding: 1.15vw 1.75vw 0 1.75vw;
+  z-index: 3;
+  top: -0.6vw;
+
+  /* Animation starting state */
+  transform: scale(0);
+  opacity: 0;
+  transform-origin: top left; /*JS will update this to match platform-bubble center*/
+  
+  /* Smooth pop in/out */
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.bubble-username {
+  font-weight: bold;
+  font-size: 1.15vw;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0.5em;
+}
+
+.bubble-message {
+  font-size: 1.15vw;
+  color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.speech-bubble.bubble-show {
+  transform: scale(1);
+}
+
+#alert-container.layout-right .speech-bubble {
+  position: absolute;
+  right: calc(4.5vw + 0.5vw); /* avatar width + gap */
+  transform-origin: calc(100% + 2vw) 1.2vw;
+}
+
+#alert-container.layout-left .speech-bubble {
+  position: absolute;
+  left: calc(4.5vw + 0.5vw); /* avatar width + gap */
+  transform-origin: calc(0% - 2vw) 1.2vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

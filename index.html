@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Bubble Alerts</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <!-- Load Roboto font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Load Streamer.bot Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@streamerbot/client/dist/streamerbot-client.min.js"></script>
+</head>
+<body>
+  <div id="waiting-status" class="toast-box">
+    Waiting for connection...
+  </div>
+
+  <div id="streamerbot-status" class="toast-box hidden">
+    <img src="assets/images/streamerbot-logo.png" alt="" class="toast-icon">
+    <span>Streamer.Bot Connected</span>
+  </div>
+
+  <div id="tikfinity-status" class="toast-box hidden">
+    <img src="assets/images/tikfinity.png" alt="" class="toast-icon">
+    <span>TikFinity Connected</span>
+  </div>
+
+  <div id="streamerbot-disconnect-status" class="toast-box hidden">
+    <img src="assets/images/streamerbot-logo.png" alt="" class="toast-icon">
+    <span>Streamer.Bot Disconnected</span>
+  </div>
+
+  <div id="tikfinity-disconnect-status" class="toast-box hidden">
+    <img src="assets/images/tikfinity.png" alt="" class="toast-icon">
+    <span>TikFinity Disconnected</span>
+  </div>
+  
+  <div id="alert-container" class="hidden">
+    
+    <div class="avatar-wrapper">
+      <div class="avatar">
+        <img class="avatar-image" src="" alt="Avatar">
+      </div>
+      <div class="platform-bubble"></div>
+      <div class="platform-badge">
+        <img class="platform-logo" src="" alt="Platform">
+      </div>
+    </div>
+
+    <div class="speech-bubble">
+      <span class="bubble-username"></span>
+      <span class="bubble-message"></span>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
