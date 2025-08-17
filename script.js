@@ -26,17 +26,22 @@ const client = new StreamerbotClient({
   port: sbPort,
 
   onConnect: (data) => {
-    console.log(`✅ Streamer.bot connected to ${sbAddress}:${sbPort}`)
-    console.debug(data);
-    streamerbotConnected = true;
-    showSuccess("streamerbot");
-    updateStatus();
+    if (!streamerbotConnected) {
+      streamerbotConnected = true;
+      console.log(`✅ Streamer.bot connected to ${sbAddress}:${sbPort}`)
+      console.debug(data);
+      showSuccess("streamerbot");
+      updateStatus();
+    }
   },
 
   onDisconnect: () => {
-    console.warn("❌ Streamer.bot disconnected");
-    streamerbotConnected = false;
-    updateStatus();
+    if (streamerbotConnected) {
+      streamerbotConnected = false;
+      console.warn("❌ Streamer.bot disconnected");
+      showDisconnect("streamerbot")
+      updateStatus();
+    }
   }
 });
 
