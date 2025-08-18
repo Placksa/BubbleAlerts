@@ -68,7 +68,7 @@ client.on('YouTube.NewSubscriber', (data) => {
     data.data.avatar,
     youtube,
     data.data.username,
-    "Yo, I subscribed on your YouTube Channel!"
+    "Yo, I subscribed to your YouTube Channel!"
   );
 });
 
