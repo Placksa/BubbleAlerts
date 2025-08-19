@@ -254,7 +254,8 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
     "animationend",
     () => {
       bubble.classList.add("bubble-pop-in");
-
+      client.doAction("18ca0619-8ace-4c41-b01f-1853543928e2");
+      
       // Wait a bit, then pop in speech bubble
       setTimeout(() => {
 
@@ -269,7 +270,6 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
 
         speechBubble.style.transform = "scale(1)";
         speechBubble.style.opacity = "1";
-              
         // Hold, then shrink
         setTimeout(() => {
           
