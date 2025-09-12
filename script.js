@@ -270,6 +270,7 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
 
         speechBubble.style.transform = "scale(1)";
         speechBubble.style.opacity = "1";
+              
         // Hold, then shrink
         setTimeout(() => {
           
