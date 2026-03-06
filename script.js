@@ -17,6 +17,39 @@ const kick = "kick";
 const tiktok = "tiktok";
 let socket; // Tikfinity Websocket
 
+// ==================
+// SOUND ALERT HELPER
+// ==================
+
+const SOUND_ALERT = {
+  src: "assets/audio/eureka.mp3",
+  volume: 0.3, // default volume (0.0 - 1.0)
+};
+
+// Preload sound
+const soundAlert = new Audio(SOUND_ALERT.src);
+soundAlert.preload = "auto";
+soundAlert.volume = SOUND_ALERT.volume;
+
+function playSoundAlert(volume = SOUND_ALERT.volume) {
+  try {
+    soundAlert.pause();
+    soundAlert.currentTime = 0;
+
+    soundAlert.volume = Math.max(0, Math.min(1, volume));
+
+    const playPromise = soundAlert.play();
+
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(err => {
+        console.warn("Sound alert autoplay prevented:", err);
+      });
+    }
+  } catch (err) {
+    console.error("Sound alert failed:", err);
+  }
+}
+
 
 // ========================
 // Connect to Streamer.bot
@@ -133,7 +166,7 @@ function tiktokEvents(event) {
     // Map event types to messages
     // [event]: [bubble message]
     const messages = {
-      follow: "Hey, I followed you on TikTok!",
+      follow: "just followed!",
       // chat: payload.comment,
     };
 
@@ -254,7 +287,7 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
     "animationend",
     () => {
       bubble.classList.add("bubble-pop-in");
-      client.doAction("18ca0619-8ace-4c41-b01f-1853543928e2");
+      playSoundAlert();
       
       // Wait a bit, then pop in speech bubble
       setTimeout(() => {
