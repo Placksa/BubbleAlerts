@@ -178,6 +178,7 @@ function tiktokEvents(event) {
         payload.nickname,
         messages[eventSource]
       );
+      console.debug(`${payload.nickname || payload.uniqueId} just followed!`)
     }
   } catch (err) {
     console.error("Failed to process TikFinity event:", err);
