@@ -489,7 +489,7 @@ function startTestLoop() {
 connectTikFinity();
 
 // Start test loop instead of one-time call
-// startTestLoop();
+startTestLoop();
 
 
 
