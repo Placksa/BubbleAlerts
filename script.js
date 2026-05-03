@@ -90,7 +90,7 @@ client.on('Twitch.Follow', async (data) => {
     avatarUrl,
     twitch,
     data.data.user_name,
-    "Hey, I followed you on Twitch!"
+    "Новый подписчик"
   );
 });
 
