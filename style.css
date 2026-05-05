@@ -144,7 +144,7 @@ body {
 
 /* === Platform Badge (Position based on layout) === */
 .platform-badge {
-  width: 1.2vw;
+  width: 1.6vw;
   aspect-ratio: 1/1;
   position: absolute;
   bottom: 0;
@@ -176,8 +176,8 @@ body {
 /* === Platform Bubble (Position based on layout) === */
 .platform-bubble {
   position: absolute;
-  width: 1vw; /* tiny start */
-  height: 1vw;
+  width: 1.3vw; /* tiny start */
+  height: 1.3vw;
   border-radius: 50%;
   top: 0;
   left: 2px; /* or right depending on layout */
