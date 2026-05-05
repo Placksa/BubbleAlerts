@@ -291,7 +291,7 @@ body {
 .speech-bubble {
   max-width: 30vw;
   min-width: 7.5vw;
-  height: 5vw;
+  height: 4.5vw;
   border-radius: 2.5vw;
   background-color: #f7f7f7;
   box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.4);
@@ -317,7 +317,7 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.2em;
 }
 
 .bubble-message {
