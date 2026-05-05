@@ -144,13 +144,13 @@ body {
 
 /* === Platform Badge (Position based on layout) === */
 .platform-badge {
-  width: 2.4vw;
+  width: 1.5vw;
   aspect-ratio: 1/1;
   position: absolute;
   bottom: 0;
   background-color: #fffbff;
   /* padding 0.2 был хз что это */
-  padding: 0.4vw;
+  padding: 0.2vw;
   border-radius: 50%;
   box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.7);
   display: flex;
@@ -169,7 +169,7 @@ body {
 }
 
 .platform-logo {
-  width: 200%;
+  width: 130%;
   aspect-ratio: 1/1;
   object-fit: contain;
 }
@@ -313,7 +313,7 @@ body {
 
 .bubble-username {
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 1.5vw;
   color: #000000;
   white-space: nowrap;
   overflow: hidden;
