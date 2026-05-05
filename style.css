@@ -291,7 +291,7 @@ body {
 .speech-bubble {
   max-width: 30vw;
   min-width: 7.5vw;
-  height: 4.5vw;
+  height: 5vw;
   border-radius: 2.5vw;
   background-color: #f7f7f7;
   box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.4);
@@ -312,7 +312,7 @@ body {
 
 .bubble-username {
   font-weight: bold;
-  font-size: 1.15vw;
+  font-size: 1.5vw;
   color: #000000;
   white-space: nowrap;
   overflow: hidden;
