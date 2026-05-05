@@ -220,7 +220,7 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
 
   // Configurable timings
   const speechPopDelay = 300;  // ms after platform bubble pop-in
-  const speechHoldTime = 3000; // ms to stay visible before shrinking
+  const speechHoldTime = 100000; // ms to stay visible before shrinking
   const speechAnimDuration = 300; // matches CSS transition
 
   // Set layout class
