@@ -90,7 +90,7 @@ client.on('Twitch.Follow', async (data) => {
     avatarUrl,
     twitch,
     data.data.user_name,
-    "подписался"
+    "спасибо за подписку!"
   );
 });
 
@@ -101,7 +101,7 @@ client.on('YouTube.NewSubscriber', (data) => {
     data.data.avatar,
     youtube,
     data.data.username,
-    "подписался"
+    "спасибо за подписку!"
   );
 });
 
@@ -114,7 +114,7 @@ client.on('Kick.Follow', async (data) => {
     profilePicUrl,
     kick,
     data.data.user.name,
-    "подписался"
+    "спасибо за подписку!"
   );
 });
 
@@ -166,7 +166,7 @@ function tiktokEvents(event) {
     // Map event types to messages
     // [event]: [bubble message]
     const messages = {
-      follow: "подписался",
+      follow: "спасибо за подписку!",
       // chat: payload.comment,
     };
 
@@ -178,7 +178,7 @@ function tiktokEvents(event) {
         payload.nickname,
         messages[eventSource]
       );
-      console.debug(`${payload.nickname || payload.uniqueId} подписался`)
+      console.debug(`${payload.nickname || payload.uniqueId} спасибо за подписку!`)
     }
   } catch (err) {
     console.error("Failed to process TikFinity event:", err);
