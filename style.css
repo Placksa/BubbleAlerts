@@ -318,6 +318,7 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 0.2em;
+  text-align: center;
 }
 
 .bubble-message {
