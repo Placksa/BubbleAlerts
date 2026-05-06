@@ -297,7 +297,7 @@ body {
   box-shadow: 0.1vw 0.1vw 1vw rgba(0, 0, 0, 0.4);
   display: flex;
   flex-direction: column;
-  padding: 1vw 1.75vw 0 1.75vw;
+  padding: 0.9vw 1.75vw 0 1.75vw;
   z-index: 3;
   top: -0.6vw;
 
