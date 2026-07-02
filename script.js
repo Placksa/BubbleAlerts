@@ -166,7 +166,7 @@ function tiktokEvents(event) {
     // Map event types to messages
     // [event]: [bubble message]
     const messages = {
-      follow: "спасибо за подписку!",
+      follow: "just followed!",
       // chat: payload.comment,
     };
 
@@ -178,7 +178,7 @@ function tiktokEvents(event) {
         payload.nickname,
         messages[eventSource]
       );
-      console.debug(`${payload.nickname || payload.uniqueId} спасибо за подписку!`)
+      console.debug(`${payload.nickname || payload.uniqueId} just followed!`)
     }
   } catch (err) {
     console.error("Failed to process TikFinity event:", err);
