@@ -23,7 +23,7 @@ let socket; // Tikfinity Websocket
 
 const SOUND_ALERT = {
   src: "assets/audio/Tuturu.mp3",
-  volume: 0.05, // default volume (0.0 - 1.0)
+  volume: 0.1, // default volume (0.0 - 1.0)
 };
 
 // Preload sound
