@@ -166,7 +166,7 @@ function tiktokEvents(event) {
     // Map event types to messages
     // [event]: [bubble message]
     const messages = {
-      follow: "just followed!",
+      follow: "спасибо за подписку!",
       // chat: payload.comment,
     };
 
