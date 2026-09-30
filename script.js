@@ -22,8 +22,8 @@ let socket; // Tikfinity Websocket
 // ==================
 
 const SOUND_ALERT = {
-  src: "assets/audio/Tuturu.mp3",
-  volume: 0.1, // default volume (0.0 - 1.0)
+  src: "assets/audio/eureka.mp3",
+  volume: 0.3, // default volume (0.0 - 1.0)
 };
 
 // Preload sound
@@ -90,7 +90,7 @@ client.on('Twitch.Follow', async (data) => {
     avatarUrl,
     twitch,
     data.data.user_name,
-    "спасибо за подписку!"
+    "Hey, I followed you on Twitch!"
   );
 });
 
@@ -101,7 +101,7 @@ client.on('YouTube.NewSubscriber', (data) => {
     data.data.avatar,
     youtube,
     data.data.username,
-    "спасибо за подписку!"
+    "Yo, I subscribed to your YouTube Channel!"
   );
 });
 
@@ -114,7 +114,7 @@ client.on('Kick.Follow', async (data) => {
     profilePicUrl,
     kick,
     data.data.user.name,
-    "спасибо за подписку!"
+    "Yo, I followed you on Kick!"
   );
 });
 
@@ -166,7 +166,7 @@ function tiktokEvents(event) {
     // Map event types to messages
     // [event]: [bubble message]
     const messages = {
-      follow: "спасибо за подписку!",
+      follow: "just followed!",
       // chat: payload.comment,
     };
 
@@ -289,11 +289,11 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
     () => {
       bubble.classList.add("bubble-pop-in");
       playSoundAlert();
-      
+
       // Wait a bit, then pop in speech bubble
       setTimeout(() => {
 
-  
+
         // Remove pop in the fade out towards the speech bubble's direction
         bubble.classList.remove("bubble-pop-in");
         if (alignRight) {
@@ -304,14 +304,14 @@ function runBubbleAlerts(avatarUrl, platform, usernameText = "", messageText = "
 
         speechBubble.style.transform = "scale(1)";
         speechBubble.style.opacity = "1";
-              
+
         // Hold, then shrink
         setTimeout(() => {
-          
+
           // Speech bubble shrinks
           speechBubble.style.transform = "scale(0)";
           speechBubble.style.opacity = "0";
-          
+
           // Bubble pops back in
           if (alignRight) {
             bubble.classList.remove("platform-bubble-pop-out-left");
@@ -492,4 +492,4 @@ connectTikFinity();
 // startTestLoop();
 
 
-
+~
