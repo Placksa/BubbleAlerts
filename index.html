@@ -8,6 +8,10 @@
   <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
   <!-- Load Roboto font -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <!-- Load Google Sans font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
   <!-- Load Streamer.bot Client -->
   <script src="https://cdn.jsdelivr.net/npm/@streamerbot/client/dist/streamerbot-client.min.js"></script>
 </head>
@@ -32,7 +36,7 @@
   </div>
 
   <div id="tikfinity-disconnect-status" class="toast-box hidden">
-    <img src="assets/images/tikfinity.png" alt="" class="toast-icon">
+    <img src="assets/images/tikfinity-logo.png" alt="" class="toast-icon">
     <span>TikFinity Disconnected</span>
   </div>
   
@@ -42,19 +46,24 @@
       <div class="avatar">
         <img class="avatar-image" src="" alt="Avatar">
       </div>
-      <div class="platform-bubble"></div>
       <div class="platform-badge">
         <img class="platform-logo" src="" alt="Platform">
       </div>
     </div>
 
-    <div class="speech-bubble">
-      <span class="bubble-username"></span>
-      <span class="bubble-message"></span>
+    <div class="message-bubble">
+      <div class="message-bubble-content">
+        <div class="bubble-text">
+          <span class="bubble-username"></span>
+          <span class="bubble-message"></span>
+        </div>
+        <img class="bubble-img" src="" alt="">
+      </div>
     </div>
 
   </div>
 
+  <script src="../.shared/utils/helpers.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
