@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="../../.shared/assets/images/favicon.ico">
+  <title>Bubble Alerts Settings</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+    }
+
+    #settingsCoreFrame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="settingsCoreFrame" title="Settings"></iframe>
+
+  <script>
+    (function () {
+      const CORE_BASE = '../../.shared/core/settings/';
+      const frame = document.getElementById('settingsCoreFrame');
+      const currentDir = window.location.href.replace(/index\.html(?:\?.*)?$/, '');
+      const rootDir = currentDir.replace(/settings\/$/, '');
+
+      const bootConfig = {
+        configUrl: currentDir + 'settings.json',
+        hooksUrl: currentDir + 'settings.js',
+        widgetUrl: rootDir,
+        page: {
+          widgetTitle: 'Bubble Alerts',
+          storageKey: 'bubble-alerts-settings',
+          sourceWidth: 1920,   // prefills Width in the Add-Source modal
+          sourceHeight: 1080,   // prefills Height
+          testButtons: [
+            { label: 'Test Twitch', value: 'twitch' },
+            { label: 'Test YouTube', value: 'youtube' },
+            { label: 'Test Kick', value: 'kick' },
+            { label: 'Test Tiktok', value: 'tiktok' }
+          ]
+        },
+      };
+      // The config rides along in the hash so it survives regardless of where
+      // this widget is served from - sessionStorage would only reach the frame
+      // while both pages share an origin.
+      frame.src = CORE_BASE + 'index.html#boot=' + encodeURIComponent(JSON.stringify(bootConfig));
+    })();
+  </script>
+</body>
+</html>
