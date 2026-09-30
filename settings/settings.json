@@ -1,0 +1,203 @@
+{
+  "sections": [
+    {
+      "title": "Core Configuration",
+      "fields": [
+        {
+          "id": "font",
+          "label": "Font",
+          "type": "font",
+          "defaultValue": "",
+          "placeholder": "Google Sans",
+          "bundledFonts": [
+            {
+              "name": "Google Sans",
+              "css": "https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+            },
+            {
+              "name": "Roboto",
+              "css": "https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            }
+          ]
+        },
+        {
+          "id": "size",
+          "label": "Font Size (px)",
+          "type": "number",
+          "defaultValue": "",
+          "placeholder": 26
+        },
+        {
+          "id": "duration",
+          "label": "Alert Duration (seconds)",
+          "type": "number",
+          "defaultValue": "",
+          "placeholder": 3
+        },
+        {
+          "id": "alignRight",
+          "label": "Alert Alignment",
+          "type": "select",
+          "defaultValue": "true",
+          "options": [
+            { "label": "Align Right", "value": "true" },
+            { "label": "Align Left", "value": "false" }
+          ]
+        },
+        {
+          "id": "appearance",
+          "label": "Appearance",
+          "type": "select",
+          "defaultValue": "light",
+          "options": [
+            { "label": "Light", "value": "light" },
+            { "label": "Dark", "value": "dark" }
+          ]
+        },
+        {
+          "id": "soundEnabled",
+          "label": "Enable Alert Sound",
+          "type": "checkbox",
+          "defaultValue": true
+        }
+      ]
+    },
+    {
+      "title": "Twitch",
+      "fields": [
+        {
+          "id": "twitchFollow",
+          "label": "Follow",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "twitchSub",
+          "label": "Subscription",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "twitchBits",
+          "label": "Bits / Cheer",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "twitchRaid",
+          "label": "Raid",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "twitchWatchStreak",
+          "label": "Watch Streak",
+          "note": "May not work due to Streamer.bot's latest update. I'm still trying to investigate this one.",
+          "type": "checkbox",
+          "defaultValue": true
+        }
+      ]
+    },
+    {
+      "title": "YouTube",
+      "fields": [
+        {
+          "id": "youtubeSub",
+          "label": "Subscriber",
+          "note": "May not work due to Streamer.bot's latest update. I'm still trying to investigate this one.",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "youtubeMembership",
+          "label": "Membership",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "youtubeSuperChat",
+          "label": "Super Chat",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "youtubeSuperSticker",
+          "label": "Super Sticker",
+          "type": "checkbox",
+          "defaultValue": true
+        }
+      ]
+    },
+    {
+      "title": "Kick",
+      "fields": [
+        {
+          "id": "kickFollow",
+          "label": "Follow",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "kickSub",
+          "label": "Subscription",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "kickKicks",
+          "label": "Kicks Gift",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "kickHost",
+          "label": "Host",
+          "type": "checkbox",
+          "defaultValue": true
+        }
+      ]
+    },
+    {
+      "title": "TikTok",
+      "fields": [
+        {
+          "id": "tiktokFollow",
+          "label": "Follow",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "tiktokSuperFan",
+          "label": "Super Fan",
+          "type": "checkbox",
+          "defaultValue": true
+        },
+        {
+          "id": "tiktokGift",
+          "label": "Gift",
+          "type": "checkbox",
+          "defaultValue": true
+        }
+      ]
+    },
+    {
+      "title": "Streamer.bot",
+      "fields": [
+        {
+          "id": "address",
+          "label": "WebSocket Address",
+          "type": "text",
+          "defaultValue": "",
+          "placeholder": "127.0.0.1"
+        },
+        {
+          "id": "port",
+          "label": "WebSocket Port",
+          "type": "number",
+          "defaultValue": "",
+          "placeholder": 8080
+        }
+      ]
+    }
+  ]
+}
